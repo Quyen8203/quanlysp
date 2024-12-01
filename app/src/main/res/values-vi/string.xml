@@ -23,6 +23,7 @@
     <string name="productprice">Giá :</string>
     <string name="type">Phân Loại</string>
     <string name="unit">/đơn vị</string>
+    <string name="count">Số lượng</string>
 
     <string name="add">Thêm</string>
     <string name="exit">Thoát</string>
@@ -30,12 +31,17 @@
     <string name="delete">Xóa</string>
     <string name="add_product">Thêm sản phẩm</string>
     <string name="remember">Lưu mật khẩu</string>
+    <string name="back">Quay lại</string>
+    <string name="backhome">Sản Phẩm</string>
+
+
 
     <string name="takepic">Chụp Hình</string>
     <string name="choosepic">Chọn Hình</string>
 
     <string name="del1">Xác nhận xóa</string>
     <string name="del2">Bạn có chắc chắn muốn xóa?</string>
+    <string name="success">Xóa thành công!</string>
     <string name="Yes">Có</string>
     <string name="No">Không</string>
     <string name="databinding">Dữ liệu bị ràng buộc!</string>

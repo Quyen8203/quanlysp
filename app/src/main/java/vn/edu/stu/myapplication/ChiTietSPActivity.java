@@ -18,13 +18,13 @@ import android.widget.Toast;
 import vn.edu.stu.myapplication.Database.Database;
 
 public class ChiTietSPActivity extends AppCompatActivity {
-    final String DATABASE_NAME = "datap.db";
+    final String DATABASE_NAME = "data.db";
     final int REQUEST_TAKE_PHOTO = 123;
     final int REQUEST_CHOOSE_PHOTO = 321;
     SQLiteDatabase database;
 
     ImageView imageviewHinh;
-    TextView textviewMa, textviewTen, textviewMota, textviewLoai, textviewGia;
+    TextView textviewMa, textviewTen, textviewMota, textviewLoai, textviewGia,textviewSL;
     Cursor cursor;
     int id = -1;
 
@@ -43,6 +43,7 @@ public class ChiTietSPActivity extends AppCompatActivity {
         textviewMota = (TextView) findViewById(R.id.textviewMota);
         textviewLoai = (TextView) findViewById(R.id.textviewLoai);
         textviewGia = (TextView) findViewById(R.id.textviewGia);
+        textviewSL = findViewById(R.id.textviewSoLuong);
         imageviewHinh = (ImageView) findViewById(R.id.imageviewHinh);
     }
 
@@ -59,7 +60,7 @@ public class ChiTietSPActivity extends AppCompatActivity {
         }
 
         database = Database.initDatabase(this, DATABASE_NAME);
-        cursor = database.rawQuery("SELECT ID, Ten, MoTa, Anh, Loai, Gia FROM Phu WHERE ID = ?", new String[]{id + ""});
+        cursor = database.rawQuery("SELECT ID, Ten, MoTa, Anh, Loai, Gia, Soluong FROM Phu WHERE ID = ?", new String[]{id + ""});
         cursor.moveToFirst();
 
         int ID = cursor.getInt(0);
@@ -68,6 +69,8 @@ public class ChiTietSPActivity extends AppCompatActivity {
         byte[] Anh = cursor.getBlob(3);
         String Loai = cursor.getString(4);
         Integer Gia = cursor.getInt(5);
+        Integer Soluong = cursor.getInt(6);
+
 
         Bitmap bitmap = BitmapFactory.decodeByteArray(Anh, 0, Anh.length);
 
@@ -77,6 +80,8 @@ public class ChiTietSPActivity extends AppCompatActivity {
         textviewMota.setText(Mota);
         textviewLoai.setText(Loai);
         textviewGia.setText(Gia+"");
+        textviewSL.setText(Soluong+"");
+
 
         cursor.close();
         database.close();

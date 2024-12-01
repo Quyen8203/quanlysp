@@ -11,6 +11,8 @@ import androidx.core.content.ContextCompat;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -133,6 +135,26 @@ public class AboutActivity extends AppCompatActivity implements OnMapReadyCallba
                 Uri.parse("tel:" + phoneNum)
         );
         startActivity(callIntent);
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_options_about, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        switch (id) {
+            case R.id.backHome:
+                Intent manhinhSP = new Intent(this,SPActivity.class);
+                startActivity(manhinhSP);
+                break;
+            case R.id.exit:
+                finish();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

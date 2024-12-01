@@ -18,6 +18,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -61,6 +62,7 @@ public class SPAdapter extends BaseAdapter {
 
         TextView txtTen = (TextView) row.findViewById(R.id.textviewTen);
         TextView txtLoai = (TextView) row.findViewById(R.id.textviewLoai);
+        TextView txtSoluong = (TextView) row.findViewById(R.id.textviewSoLuong);
 
         Button btnXoa = (Button) row.findViewById(R.id.btnXoa);
 
@@ -68,6 +70,7 @@ public class SPAdapter extends BaseAdapter {
 
         txtTen.setText(SP.Ten);
         txtLoai.setText(SP.Loai);
+        txtSoluong.setText("Số lượng: " + SP.Soluong);
 
         Bitmap bmAVT = BitmapFactory.decodeByteArray(SP.Anh, 0, SP.Anh.length);
         imgAVT.setImageBitmap(bmAVT);
@@ -83,6 +86,7 @@ public class SPAdapter extends BaseAdapter {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         delete(SP.ID);
+                        Toast.makeText(context, R.string.success, Toast.LENGTH_SHORT).show();
                     }
                 });
                 builder.setNegativeButton(R.string.No, new DialogInterface.OnClickListener() {
@@ -92,6 +96,7 @@ public class SPAdapter extends BaseAdapter {
                     }
                 });
                 AlertDialog dialog = builder.create();
+                dialog.setCanceledOnTouchOutside(false);
                 dialog.show();
             }
         });
@@ -119,7 +124,7 @@ public class SPAdapter extends BaseAdapter {
     }
 
     private void delete(int id) {
-        SQLiteDatabase database = Database.initDatabase(context, "datap.db");
+        SQLiteDatabase database = Database.initDatabase(context, "data.db");
         database.delete("Phu", "ID = ?", new String[]{id + ""});
         list.clear();
         Cursor cursor = database.rawQuery("SELECT ID, Ten, MoTa, Anh, Loai, Gia, Soluong FROM Phu", null);

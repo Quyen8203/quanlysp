@@ -17,7 +17,7 @@ import android.widget.Toast;
 import vn.edu.stu.myapplication.Database.Database;
 
 public class AddLoaiActivity extends AppCompatActivity {
-    final String DATABASE_NAME = "datap.db";
+    final String DATABASE_NAME = "data.db";
 
     Button btnThem, btnHuy;
     EditText txtLoai;
@@ -56,7 +56,13 @@ public class AddLoaiActivity extends AppCompatActivity {
     }
 
     private void insert() {
+
         String loai = txtLoai.getText().toString();
+
+        if (loai.isEmpty()) {
+            Toast.makeText(getApplicationContext(), "Vui lòng nhập tên loại sản phẩm!", Toast.LENGTH_LONG).show();
+            return;
+        }
 
         ContentValues contentValues = new ContentValues();
         contentValues.put("Loai", loai);
@@ -67,6 +73,9 @@ public class AddLoaiActivity extends AppCompatActivity {
 
         database.close();
         Toast.makeText(getApplicationContext(), " Tạo thành công", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, LoaiActivity.class);
+        startActivity(intent);
+        finish();
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

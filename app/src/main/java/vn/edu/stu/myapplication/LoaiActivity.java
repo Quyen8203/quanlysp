@@ -23,7 +23,7 @@ import vn.edu.stu.myapplication.Model.SP;
 
 public class LoaiActivity extends AppCompatActivity {
 
-    final String DATABASE_NAME = "datap.db";
+    final String DATABASE_NAME = "data.db";
     SQLiteDatabase database;
     ListView lvLoai;
     ArrayList<Loai> listLoai;
@@ -40,6 +40,12 @@ public class LoaiActivity extends AppCompatActivity {
         addEvents();
         readData();
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        readData();
     }
 
     private void addControls() {
@@ -90,15 +96,21 @@ public class LoaiActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         switch (id) {
+            case R.id.back:
+                Intent manhinhSP = new Intent(this,SPActivity.class);
+                startActivity(manhinhSP);
+                break;
             case R.id.about:
                 Intent manghinhAbout = new Intent(
                         LoaiActivity.this,
                         AboutActivity.class);
                 startActivity(manghinhAbout);
+                break;
 
             case R.id.exit:
                 Intent intent= new Intent(LoaiActivity.this,SPActivity.class);
                 startActivity(intent);
+                break;
         }
         return super.onOptionsItemSelected(item);
     }

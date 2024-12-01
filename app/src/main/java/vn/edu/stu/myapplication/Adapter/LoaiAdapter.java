@@ -24,7 +24,7 @@ import vn.edu.stu.myapplication.SPActivity;
 import vn.edu.stu.myapplication.UpdateLoaiActivity;
 
 public class LoaiAdapter extends BaseAdapter {
-    final String DATABASE_NAME = "datap.db";
+    final String DATABASE_NAME = "data.db";
 
     SQLiteDatabase databaseLoai;
     SQLiteDatabase databaseTraiCay;
@@ -90,6 +90,7 @@ public class LoaiAdapter extends BaseAdapter {
                     }
                 });
                 AlertDialog dialog = builder.create();
+                dialog.setCanceledOnTouchOutside(false);
                 dialog.show();
             }
         });

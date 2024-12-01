@@ -118,6 +118,27 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/textviewGia"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/count"
+        android:textColor="#ff00"
+        android:textSize="22dp" />
+
+    <TextView
+        android:id="@+id/textviewSoLuong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textviewGia"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="20dp"
+        android:text="Số lượng"
+        android:textColor="#003cff"
+        android:textSize="22dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/textviewLoai"
         android:layout_marginTop="20dp"
         android:layout_toRightOf="@+id/textviewGia"

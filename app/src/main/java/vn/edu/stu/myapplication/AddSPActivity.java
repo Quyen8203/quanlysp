@@ -32,18 +32,20 @@ import java.util.ArrayList;
 
 import vn.edu.stu.myapplication.Database.Database;
 import vn.edu.stu.myapplication.Model.Loai;
+import vn.edu.stu.myapplication.Model.SP;
 
 public class AddSPActivity extends AppCompatActivity {
-    final String DATABASE_NAME = "datap.db";
+    final String DATABASE_NAME = "data.db";
     final int REQUEST_TAKE_PHOTO = 123;
     final int REQUEST_CHOOSE_PHOTO = 321;
 
     SQLiteDatabase database;
     Button btnChonHinh,  btnThem, btnHuy;
-    EditText txtTen, txtMota, txtGia;
+    EditText txtTen, txtMota, txtGia,txtSL;
     Spinner spinner;
     ImageView imgAVT;
     ArrayList<Loai> loais;
+    ArrayList<SP> list;
     String loai;
 
     @Override
@@ -51,8 +53,11 @@ public class AddSPActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_s_p);
         addControls();
+
         addEvents();
         spinner();
+
+
     }
 
     private void addControls() {
@@ -65,6 +70,7 @@ public class AddSPActivity extends AppCompatActivity {
         txtMota = (EditText) findViewById(R.id.txtMoTa);
         spinner = (Spinner) findViewById(R.id.spinner);
         txtGia = (EditText) findViewById(R.id.txtGia);
+        txtSL = findViewById(R.id.txtSL);
 
         imgAVT = (ImageView) findViewById(R.id.imgAVT);
 
@@ -109,8 +115,31 @@ public class AddSPActivity extends AppCompatActivity {
     private void insert() {
         String ten = txtTen.getText().toString();
         String mota = txtMota.getText().toString();
-        String gia = txtGia.getText().toString();
+        String gia = txtGia.getText().toString().trim();
         byte[] anh = getByteArrayFromImageView(imgAVT);
+        String soluong = txtSL.getText().toString().trim();
+
+        if (ten.isEmpty() || mota.isEmpty() || gia.isEmpty() || soluong.isEmpty()) {
+            Toast.makeText(this, "Vui lòng điền đầy đủ thông tin!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        int gia1;
+        int soluong1;
+
+        try {
+            gia1 = Integer.parseInt(gia);
+            soluong1 = Integer.parseInt(soluong);
+        } catch (NumberFormatException e) {
+            Toast.makeText(this, "Giá và số lượng phải là số hợp lệ!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Kiểm tra giá trị âm
+        if (gia1 <= 0 || soluong1 <= 0) {
+            Toast.makeText(this, "Giá và số lượng phải lớn hơn 0!", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         ContentValues contentValues = new ContentValues();
         contentValues.put("Ten", ten);
@@ -118,11 +147,16 @@ public class AddSPActivity extends AppCompatActivity {
         contentValues.put("Anh", anh);
         contentValues.put("Loai",String.valueOf(loai));
         contentValues.put("Gia", gia + "");
+        contentValues.put("Soluong", soluong1);
 
         SQLiteDatabase database = Database.initDatabase(this, DATABASE_NAME);
         database.insert("Phu", null, contentValues);
 
         Toast.makeText(getApplicationContext(), " Tạo thành công", Toast.LENGTH_LONG).show();
+
+        Intent intent = new Intent(this, SPActivity.class);
+        startActivity(intent);
+
     }
 
     private void cancel() {
@@ -173,7 +207,7 @@ public class AddSPActivity extends AppCompatActivity {
     }
 
     private void spinner() {
-        database = openOrCreateDatabase("datap.db", MODE_PRIVATE, null);
+        database = openOrCreateDatabase("data.db", MODE_PRIVATE, null);
 
         Cursor cursor = database.rawQuery("SELECT * FROM Loai", null);
         loais.clear();
@@ -219,5 +253,7 @@ public class AddSPActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 
 }

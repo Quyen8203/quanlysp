@@ -19,7 +19,7 @@ import vn.edu.stu.myapplication.Database.Database;
 import vn.edu.stu.myapplication.Model.SP;
 
 public class SPActivity extends AppCompatActivity {
-    final String DATABASE_NAME = "datap.db";
+    final String DATABASE_NAME = "data.db";
     SQLiteDatabase database;
 
     ListView lvTraiCay;
@@ -31,6 +31,12 @@ public class SPActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_s_p);
         addControls();
+        readData();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         readData();
     }
 

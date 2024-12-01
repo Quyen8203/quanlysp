@@ -18,7 +18,7 @@ import android.widget.Toast;
 import vn.edu.stu.myapplication.Database.Database;
 
 public class UpdateLoaiActivity extends AppCompatActivity {
-    final String DATABASE_NAME = "datap.db";
+    final String DATABASE_NAME = "data.db";
     int id = -1;
     Cursor cursor;
     SQLiteDatabase database;
@@ -87,12 +87,13 @@ public class UpdateLoaiActivity extends AppCompatActivity {
         ContentValues contentValues = new ContentValues();
         contentValues.put("Loai", loai);
 
-        SQLiteDatabase database = Database.initDatabase(this, "datap.db");
+        SQLiteDatabase database = Database.initDatabase(this, "data.db");
         database.update("Loai", contentValues, "id = ?", new String[]{id + ""});
 
         database.close();
 
         Toast.makeText(getApplicationContext(), R.string.fix, Toast.LENGTH_LONG).show();
+
     }
 
     @Override

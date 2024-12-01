@@ -34,7 +34,7 @@ import vn.edu.stu.myapplication.Database.Database;
 import vn.edu.stu.myapplication.Model.Loai;
 
 public class UpdateSPActivity extends AppCompatActivity {
-    final String DATABASE_NAME = "datap.db";
+    final String DATABASE_NAME = "data.db";
     final int REQUEST_TAKE_PHOTO = 123;
     final int REQUEST_CHOOSE_PHOTO = 321;
     int id = -1;
@@ -43,7 +43,7 @@ public class UpdateSPActivity extends AppCompatActivity {
     SQLiteDatabase database;
 
     Button btnChonHinh,  btnLuu, btnHuy;
-    EditText txtTen, txtMota, txtLoai, txtGia;
+    EditText txtTen, txtMota, txtLoai, txtGia,txtSL;
     ImageView imgAVT;
     Spinner spinner;
     ArrayList<Loai> loais;
@@ -70,6 +70,7 @@ public class UpdateSPActivity extends AppCompatActivity {
         txtMota = (EditText) findViewById(R.id.txtMoTa);
         spinner = (Spinner) findViewById(R.id.spinner);
         txtGia = (EditText) findViewById(R.id.txtGia);
+        txtSL = findViewById(R.id.txtSL);
 
         imgAVT = (ImageView) findViewById(R.id.imgAVT);
 
@@ -117,19 +118,22 @@ public class UpdateSPActivity extends AppCompatActivity {
         id = intent.getIntExtra("ID", -1);
 
         database = Database.initDatabase(this, DATABASE_NAME);
-        cursor = database.rawQuery("SELECT ID, Ten, MoTa, Anh, Gia FROM Phu WHERE ID = ?", new String[]{id + ""});
+        cursor = database.rawQuery("SELECT ID, Ten, MoTa, Anh, Gia, Soluong FROM Phu WHERE ID = ?", new String[]{id + ""});
         cursor.moveToFirst();
 
         String Ten = cursor.getString(1);
         String Mota = cursor.getString(2);
         byte[] Anh = cursor.getBlob(3);
         Integer Gia = cursor.getInt(4);
+        Integer Soluong = cursor.getInt(5);
 
         Bitmap bitmap = BitmapFactory.decodeByteArray(Anh, 0, Anh.length);
         imgAVT.setImageBitmap(bitmap);
         txtTen.setText(Ten);
         txtMota.setText(Mota);
         txtGia.setText(Gia + "");
+        txtSL.setText(Soluong + "");
+
     }
 
     private void takePicture() {
@@ -169,6 +173,12 @@ public class UpdateSPActivity extends AppCompatActivity {
         String mota = txtMota.getText().toString();
         String gia = txtGia.getText().toString();
         byte[] anh = getByteArrayFromImageView(imgAVT);
+        String soluong = txtSL.getText().toString();
+
+        if (!gia.matches("\\d+") || !soluong.matches("\\d+")) {
+            Toast.makeText(this, "Giá và số lượng phải là số nguyên dương!", Toast.LENGTH_LONG).show();
+            return;
+        }
 
         ContentValues contentValues = new ContentValues();
         contentValues.put("Ten", ten);
@@ -176,11 +186,15 @@ public class UpdateSPActivity extends AppCompatActivity {
         contentValues.put("Anh", anh);
         contentValues.put("Loai", String.valueOf(loai));
         contentValues.put("Gia", gia + "");
+        contentValues.put("Soluong", soluong + "");
 
-        SQLiteDatabase database = Database.initDatabase(this, "datap.db");
+        SQLiteDatabase database = Database.initDatabase(this, "data.db");
         database.update("Phu", contentValues, "id = ?", new String[]{id + ""});
 
         Toast.makeText(getApplicationContext(), R.string.fix, Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, SPActivity.class);
+        startActivity(intent);
+        finish();
 
     }
 
