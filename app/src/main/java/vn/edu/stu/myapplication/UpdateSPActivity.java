@@ -42,7 +42,7 @@ public class UpdateSPActivity extends AppCompatActivity {
 
     SQLiteDatabase database;
 
-    Button btnChonHinh,  btnLuu, btnHuy;
+    Button btnChonHinh,  btnLuu, btnHuy,btnChuphinh;
     EditText txtTen, txtMota, txtLoai, txtGia,txtSL;
     ImageView imgAVT;
     Spinner spinner;
@@ -62,6 +62,7 @@ public class UpdateSPActivity extends AppCompatActivity {
 
     private void addControls() {
         btnChonHinh = (Button) findViewById(R.id.btnChonHinh);
+        btnChuphinh = findViewById(R.id.btnChupHinh);
 
         btnLuu = (Button) findViewById(R.id.btnThem);
         btnHuy = (Button) findViewById(R.id.btnHuy);
@@ -99,6 +100,13 @@ public class UpdateSPActivity extends AppCompatActivity {
             }
         });
 
+
+        btnChuphinh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                takePicture();
+            }
+        });
 
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

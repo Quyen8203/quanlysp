@@ -40,7 +40,7 @@ public class AddSPActivity extends AppCompatActivity {
     final int REQUEST_CHOOSE_PHOTO = 321;
 
     SQLiteDatabase database;
-    Button btnChonHinh,  btnThem, btnHuy;
+    Button btnChonHinh,  btnThem, btnHuy, btnChuphinh;
     EditText txtTen, txtMota, txtGia,txtSL;
     Spinner spinner;
     ImageView imgAVT;
@@ -62,6 +62,7 @@ public class AddSPActivity extends AppCompatActivity {
 
     private void addControls() {
         btnChonHinh = (Button) findViewById(R.id.btnChonHinh);
+        btnChuphinh = findViewById(R.id.btnChupHinh);
 
         btnThem = (Button) findViewById(R.id.btnThem);
         btnHuy = (Button) findViewById(R.id.btnHuy);
@@ -99,6 +100,12 @@ public class AddSPActivity extends AppCompatActivity {
             }
         });
 
+        btnChuphinh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                takePicture();
+            }
+        });
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -123,6 +130,7 @@ public class AddSPActivity extends AppCompatActivity {
             Toast.makeText(this, "Vui lòng điền đầy đủ thông tin!", Toast.LENGTH_SHORT).show();
             return;
         }
+
 
         int gia1;
         int soluong1;
@@ -167,6 +175,8 @@ public class AddSPActivity extends AppCompatActivity {
     private void takePicture() {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(intent, REQUEST_TAKE_PHOTO);
+
+
     }
 
     private void choosePhoto() {

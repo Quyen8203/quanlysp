@@ -37,11 +37,14 @@ public class AboutActivity extends AppCompatActivity implements OnMapReadyCallba
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
 
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.myMap);
-        mapFragment.getMapAsync(this);
 
         addControls();
         addEvents();
+
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        if (mapFragment != null) {
+            mapFragment.getMapAsync(this);
+        }
     }
 
     private void addControls() {
@@ -160,6 +163,9 @@ public class AboutActivity extends AppCompatActivity implements OnMapReadyCallba
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
         map = googleMap;
-
+        LatLng DHCNSG = new LatLng(10.737990732005878, 106.67781410326936);
+        map.addMarker(new MarkerOptions().position(DHCNSG).title("Marker in Đại Học Công Nghệ Sài Gòn"));
+        map.moveCamera(CameraUpdateFactory.newLatLng(DHCNSG));
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(DHCNSG,18));
     }
 }
