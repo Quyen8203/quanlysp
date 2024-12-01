@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">QUAN LY SAN PHAM</string>
+    <string name="loginsuccess">Login Success</string>
+    <string name="loginerror">Login Error! Try Again</string>
+    <string name="account">Account :</string>
+    <string name="pass">Password :</string>
+    <string name="login">Login</string>
+
+    <string name="about">About</string>
+    <string name="name">NGHIEM SIEU QUOC QUYEN</string>
+    <string name="avta">PROFILE PICTURE</string>
+    <string name="clasS">D21_TH01</string>
+    <string name="studentcode">DH52101532</string>
+    <string name="email">dh52101532@student.stu.edu.vn</string>
+    <string name="sentmail">Sent Email</string>
+    <string name="number">Number :</string>
+
+    <string name="productcode">Code :</string>
+    <string name="productname">Name :</string>
+    <string name="productdescription">Description :</string>
+    <string name="producttype">Type :</string>
+    <string name="productprice">Price :</string>
+    <string name="type">Category</string>
+    <string name="unit">/unit</string>
+    <string name="add_product">Add product</string>
+    <string name="add">Add</string>
+    <string name="exit">Exit</string>
+    <string name="update">Update</string>
+    <string name="delete">Del</string>
+    <string name="remember">Remember</string>
+
+    <string name="takepic">Take Picture</string>
+    <string name="choosepic">Choose Picture</string>
+
+    <string name="del1">Confirm deletion</string>
+    <string name="del2">You want to delete it?</string>
+    <string name="Yes">Yes</string>
+    <string name="No">No</string>
+    <string name="databinding">Data Binding!</string>
+    <string name="cantdel">CAN\'T DELETE</string>
+
+    <string name="fix">Fix Successful</string>
+
+    <string name="map_api_key">AIzaSyBJ_XlxltqRMHEaqUxKak6LkIb0jt4qRWM</string>
+
+</resources>

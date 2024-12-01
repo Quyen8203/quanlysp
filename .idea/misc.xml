@@ -1,0 +1,49 @@
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Admin/Downloads/MyApplication/app/src/main/res/drawable/botron.xml" value="0.2734375" />
+        <entry key="..\:/Users/Admin/Downloads/MyApplication/app/src/main/res/drawable/botron_button.xml" value="0.2734375" />
+        <entry key="..\:/Users/Admin/Downloads/MyApplication/app/src/main/res/layout/activity_about.xml" value="0.16621376811594202" />
+        <entry key="..\:/Users/Admin/Downloads/MyApplication/app/src/main/res/layout/activity_add_loai.xml" value="0.16621376811594202" />
+        <entry key="..\:/Users/Admin/Downloads/MyApplication/app/src/main/res/layout/activity_add_s_p.xml" value="0.2210144927536232" />
+        <entry key="..\:/Users/Admin/Downloads/MyApplication/app/src/main/res/layout/activity_add_trai_cay.xml" value="0.2210144927536232" />
+        <entry key="..\:/Users/Admin/Downloads/MyApplication/app/src/main/res/layout/activity_chi_tiet_s_p.xml" value="0.2210144927536232" />
+        <entry key="..\:/Users/Admin/Downloads/MyApplication/app/src/main/res/layout/activity_chi_tiet_trai_cay.xml" value="0.2210144927536232" />
+        <entry key="..\:/Users/Admin/Downloads/MyApplication/app/src/main/res/layout/activity_loai.xml" value="0.2210144927536232" />
+        <entry key="..\:/Users/Admin/Downloads/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.2210144927536232" />
+        <entry key="..\:/Users/Admin/Downloads/MyApplication/app/src/main/res/layout/activity_trai_cay.xml" value="0.2210144927536232" />
+        <entry key="..\:/Users/Admin/Downloads/MyApplication/app/src/main/res/layout/activity_update_loai.xml" value="0.2210144927536232" />
+        <entry key="..\:/Users/Admin/Downloads/MyApplication/app/src/main/res/layout/activity_update_trai_cay.xml" value="0.2210144927536232" />
+        <entry key="..\:/Users/Admin/Downloads/MyApplication/app/src/main/res/layout/dong_traicay.xml" value="0.2210144927536232" />
+        <entry key="..\:/Users/Admin/Downloads/MyApplication/app/src/main/res/layout/loai_traicay.xml" value="0.2210144927536232" />
+        <entry key="..\:/Users/Admin/Downloads/MyApplication/app/src/main/res/menu/menu_options_sp.xml" value="0.25729166666666664" />
+        <entry key="..\:/Users/Admin/Downloads/MyApplication/app/src/main/res/menu/menu_options_traicay.xml" value="0.25729166666666664" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3828125" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/activity_about.xml" value="0.5" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/activity_add_loai.xml" value="0.24365942028985507" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/activity_add_trai_cay.xml" value="0.5" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/activity_chi_tiet_trai_cay.xml" value="0.49930843706777317" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/activity_loai.xml" value="0.36666666666666664" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/activity_them_loai.xml" value="0.36666666666666664" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/activity_trai_cay.xml" value="0.5861781848459617" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/activity_update_loai.xml" value="0.36666666666666664" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/activity_update_trai_cay.xml" value="0.5" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/dong_phu.xml" value="0.33" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/dong_traiCay.xml" value="0.1" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/dong_traicay.xml" value="0.5" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/layout/loai_traicay.xml" value="0.5" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/menu/menu_options.xml" value="0.33" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/menu/menu_options_loai.xml" value="0.36666666666666664" />
+        <entry key="..\:/android/MyApplication/app/src/main/res/xml/asset.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="corretto-11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

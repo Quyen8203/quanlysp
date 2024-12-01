@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">QUẢN LÝ SẢN PHẨM</string>
+    <string name="loginsuccess">Đăng Nhập Thành Công</string>
+    <string name="loginerror">Đăng Nhập Thất Bại! Thử Lại</string>
+    <string name="account">Tài Khoản :</string>
+    <string name="pass">Mật Khẩu :</string>
+    <string name="login">Đăng Nhập</string>
+
+    <string name="about">Thông Tin</string>
+    <string name="name">NGHIÊM SIÊU QUỐC QUYỀN</string>
+    <string name="avta">Ảnh đại diện</string>
+    <string name="clasS">D21_TH01</string>
+    <string name="studentcode">DH52101532</string>
+    <string name="email">dh52101532@student.stu.edu.vn</string>
+    <string name="sentmail">Gửi Email</string>
+    <string name="number">Số :</string>
+
+    <string name="productcode">Mã :</string>
+    <string name="productname">Tên :</string>
+    <string name="productdescription">Mô Tả :</string>
+    <string name="producttype">Loại :</string>
+    <string name="productprice">Giá :</string>
+    <string name="type">Phân Loại</string>
+    <string name="unit">/đơn vị</string>
+
+    <string name="add">Thêm</string>
+    <string name="exit">Thoát</string>
+    <string name="update">Cập Nhật</string>
+    <string name="delete">Xóa</string>
+    <string name="add_product">Thêm sản phẩm</string>
+    <string name="remember">Lưu mật khẩu</string>
+
+    <string name="takepic">Chụp Hình</string>
+    <string name="choosepic">Chọn Hình</string>
+
+    <string name="del1">Xác nhận xóa</string>
+    <string name="del2">Bạn có chắc chắn muốn xóa?</string>
+    <string name="Yes">Có</string>
+    <string name="No">Không</string>
+    <string name="databinding">Dữ liệu bị ràng buộc!</string>
+    <string name="cantdel">Không thể xóa</string>
+
+    <string name="fix">Sửa thành công</string>
+
+    <string name="map_api_key">AIzaSyBJ_XlxltqRMHEaqUxKak6LkIb0jt4qRWM</string>
+</resources>
