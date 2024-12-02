@@ -48,7 +48,8 @@
 
     <string name="fix">Fix Successful</string>
 
-    <string name="map_api_key">a</string>
+    <string name="map_api_key"></string>
+    <string name="title_activity_maps">MapsActivity</string>
 
 
 </resources>
