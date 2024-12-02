@@ -31,6 +31,8 @@
     <string name="remember">Remember</string>
     <string name="back">Back</string>
     <string name="backhome">Back Home</string>
+    <string name="call">Call</string>
+
 
 
     <string name="takepic">Take Picture</string>
@@ -46,6 +48,7 @@
 
     <string name="fix">Fix Successful</string>
 
-    <string name="map_api_key">AIzaSyBJ_XlxltqRMHEaqUxKak6LkIb0jt4qRWM</string>
+    <string name="map_api_key">a</string>
+
 
 </resources>

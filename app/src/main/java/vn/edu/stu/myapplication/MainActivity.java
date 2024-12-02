@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     Toast.makeText(getApplicationContext(), R.string.loginsuccess, Toast.LENGTH_LONG).show();
 
-                    Intent mh = new Intent(MainActivity.this, SPActivity.class);
+                    Intent mh = new Intent(MainActivity.this, LoaiActivity.class);
                     startActivity(mh);
                 }
                 else{

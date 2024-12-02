@@ -1,68 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:padding="10dp">
 
-    <!-- Hình ảnh bên trái -->
-    <ImageView
-        android:id="@+id/imageviewHinh"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        android:padding="10dp" />
-
-    <!-- Phần thông tin ở giữa -->
+    <!-- Một sản phẩm -->
     <LinearLayout
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/imageviewHinh"
-        android:layout_toStartOf="@id/btnXoa"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_centerVertical="true"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        android:padding="10dp">
 
-        <TextView
-            android:id="@+id/textviewTen"
+        <!-- Hình ảnh sản phẩm bên trái -->
+        <ImageView
+            android:id="@+id/imageviewHinh"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:layout_marginRight="10dp" />
+
+        <!-- Thông tin sản phẩm ở giữa -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textviewTen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/productname"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textviewLoai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/type"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:layout_marginTop="5dp" />
+
+            <TextView
+                android:id="@+id/textviewSoLuong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/count"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:layout_marginTop="5dp" />
+        </LinearLayout>
+
+        <!-- Nút xóa bên phải -->
+        <Button
+            android:id="@+id/btnXoa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tên"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textviewLoai"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@string/type"
-            android:textColor="@color/black"
-            android:textSize="16sp" />
-
-        <!-- Số lượng -->
-        <TextView
-            android:id="@+id/textviewSoLuong"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="Số lượng: "
-            android:textColor="@color/black"
-            android:textSize="16sp" />
+            android:text="@string/delete"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/botron"
+            android:padding="10dp"
+            android:layout_gravity="center" />
     </LinearLayout>
-
-    <!-- Nút bên phải -->
-    <Button
-        android:id="@+id/btnXoa"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
-        android:layout_marginEnd="10dp"
-        android:background="@drawable/botron"
-        android:text="@string/delete"
-        android:textColor="#ffffff" />
-
-</RelativeLayout>
+</LinearLayout>

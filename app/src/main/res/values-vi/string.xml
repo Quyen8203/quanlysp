@@ -16,6 +16,7 @@
     <string name="sentmail">Gửi Email</string>
     <string name="number">Số :</string>
 
+
     <string name="productcode">Mã :</string>
     <string name="productname">Tên :</string>
     <string name="productdescription">Mô Tả :</string>
@@ -33,6 +34,7 @@
     <string name="remember">Lưu mật khẩu</string>
     <string name="back">Quay lại</string>
     <string name="backhome">Sản Phẩm</string>
+    <string name="call">Gọi</string>
 
 
 
@@ -49,5 +51,5 @@
 
     <string name="fix">Sửa thành công</string>
 
-    <string name="map_api_key">AIzaSyBJ_XlxltqRMHEaqUxKak6LkIb0jt4qRWM</string>
+    <string name="map_api_key">a</string>
 </resources>

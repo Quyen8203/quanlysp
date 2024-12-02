@@ -20,7 +20,6 @@ import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 
@@ -30,7 +29,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class AboutActivity extends AppCompatActivity implements OnMapReadyCallback {
     TextView txtPhoneNum,txtEmail;
     Button btnCall,btnEmail;
-    GoogleMap map;
+    GoogleMap mMap;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,11 +40,13 @@ public class AboutActivity extends AppCompatActivity implements OnMapReadyCallba
 
         addControls();
         addEvents();
-
+        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         if (mapFragment != null) {
             mapFragment.getMapAsync(this);
         }
+
+
     }
 
     private void addControls() {
@@ -139,6 +141,16 @@ public class AboutActivity extends AppCompatActivity implements OnMapReadyCallba
         );
         startActivity(callIntent);
     }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+        LatLng stu = new LatLng(10.738006484863064, 106.67783322020087);
+        mMap.addMarker(new MarkerOptions().position(stu).title("Marker in Đại Học Công Nghệ Sài Gòn"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(stu));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(stu,15));
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_options_about, menu);
@@ -160,12 +172,4 @@ public class AboutActivity extends AppCompatActivity implements OnMapReadyCallba
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onMapReady(@NonNull GoogleMap googleMap) {
-        map = googleMap;
-        LatLng DHCNSG = new LatLng(10.737990732005878, 106.67781410326936);
-        map.addMarker(new MarkerOptions().position(DHCNSG).title("Marker in Đại Học Công Nghệ Sài Gòn"));
-        map.moveCamera(CameraUpdateFactory.newLatLng(DHCNSG));
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(DHCNSG,18));
-    }
 }

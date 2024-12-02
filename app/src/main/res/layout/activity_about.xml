@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".AboutActivity"
+    tools:context=".MapsActivity"
     android:background="@color/white">
 
     <LinearLayout
@@ -108,7 +108,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="120dp"
-                android:text="Call" />
+                android:text="@string/call" />
 
         </LinearLayout>
 
@@ -118,10 +118,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-            <fragment
-                android:name="com.google.android.gms.maps.SupportMapFragment"
-                android:id="@+id/myMap"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
     </LinearLayout>
 </LinearLayout>
