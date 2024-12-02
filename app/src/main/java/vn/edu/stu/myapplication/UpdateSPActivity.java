@@ -34,7 +34,7 @@ import vn.edu.stu.myapplication.Database.Database;
 import vn.edu.stu.myapplication.Model.Loai;
 
 public class UpdateSPActivity extends AppCompatActivity {
-    final String DATABASE_NAME = "data.db";
+    final String DATABASE_NAME = "data.sqlite";
     final int REQUEST_TAKE_PHOTO = 123;
     final int REQUEST_CHOOSE_PHOTO = 321;
     int id = -1;
@@ -196,7 +196,7 @@ public class UpdateSPActivity extends AppCompatActivity {
         contentValues.put("Gia", gia + "");
         contentValues.put("Soluong", soluong + "");
 
-        SQLiteDatabase database = Database.initDatabase(this, "data.db");
+        SQLiteDatabase database = Database.initDatabase(this, "data.sqlite");
         database.update("Phu", contentValues, "id = ?", new String[]{id + ""});
 
         Toast.makeText(getApplicationContext(), R.string.fix, Toast.LENGTH_LONG).show();

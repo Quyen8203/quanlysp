@@ -17,7 +17,7 @@ import android.widget.Toast;
 import vn.edu.stu.myapplication.Database.Database;
 
 public class AddLoaiActivity extends AppCompatActivity {
-    final String DATABASE_NAME = "data.db";
+    final String DATABASE_NAME = "data.sqlite";
 
     Button btnThem, btnHuy;
     EditText txtLoai;

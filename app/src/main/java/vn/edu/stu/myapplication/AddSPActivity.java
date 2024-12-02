@@ -35,7 +35,7 @@ import vn.edu.stu.myapplication.Model.Loai;
 import vn.edu.stu.myapplication.Model.SP;
 
 public class AddSPActivity extends AppCompatActivity {
-    final String DATABASE_NAME = "data.db";
+    final String DATABASE_NAME = "data.sqlite";
     final int REQUEST_TAKE_PHOTO = 123;
     final int REQUEST_CHOOSE_PHOTO = 321;
 
@@ -217,7 +217,7 @@ public class AddSPActivity extends AppCompatActivity {
     }
 
     private void spinner() {
-        database = openOrCreateDatabase("data.db", MODE_PRIVATE, null);
+        database = openOrCreateDatabase("data.sqlite", MODE_PRIVATE, null);
 
         Cursor cursor = database.rawQuery("SELECT * FROM Loai", null);
         loais.clear();

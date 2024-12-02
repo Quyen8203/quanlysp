@@ -23,7 +23,7 @@ import vn.edu.stu.myapplication.Model.SP;
 
 public class LoaiActivity extends AppCompatActivity {
 
-    final String DATABASE_NAME = "data.db";
+    final String DATABASE_NAME = "data.sqlite";
     SQLiteDatabase database;
     ListView lvLoai;
     ArrayList<Loai> listLoai;

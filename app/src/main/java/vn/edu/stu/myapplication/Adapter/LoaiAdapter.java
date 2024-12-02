@@ -24,7 +24,7 @@ import vn.edu.stu.myapplication.SPActivity;
 import vn.edu.stu.myapplication.UpdateLoaiActivity;
 
 public class LoaiAdapter extends BaseAdapter {
-    final String DATABASE_NAME = "data.db";
+    final String DATABASE_NAME = "data.sqlite";
 
     SQLiteDatabase databaseLoai;
     SQLiteDatabase databaseTraiCay;

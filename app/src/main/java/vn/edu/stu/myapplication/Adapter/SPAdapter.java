@@ -124,7 +124,7 @@ public class SPAdapter extends BaseAdapter {
     }
 
     private void delete(int id) {
-        SQLiteDatabase database = Database.initDatabase(context, "data.db");
+        SQLiteDatabase database = Database.initDatabase(context, "data.sqlite");
         database.delete("Phu", "ID = ?", new String[]{id + ""});
         list.clear();
         Cursor cursor = database.rawQuery("SELECT ID, Ten, MoTa, Anh, Loai, Gia, Soluong FROM Phu", null);

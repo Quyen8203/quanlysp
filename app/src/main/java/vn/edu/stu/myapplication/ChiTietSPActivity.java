@@ -18,7 +18,7 @@ import android.widget.Toast;
 import vn.edu.stu.myapplication.Database.Database;
 
 public class ChiTietSPActivity extends AppCompatActivity {
-    final String DATABASE_NAME = "data.db";
+    final String DATABASE_NAME = "data.sqlite";
     final int REQUEST_TAKE_PHOTO = 123;
     final int REQUEST_CHOOSE_PHOTO = 321;
     SQLiteDatabase database;

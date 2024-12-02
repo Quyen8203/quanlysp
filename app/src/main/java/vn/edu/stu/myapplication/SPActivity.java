@@ -19,7 +19,7 @@ import vn.edu.stu.myapplication.Database.Database;
 import vn.edu.stu.myapplication.Model.SP;
 
 public class SPActivity extends AppCompatActivity {
-    final String DATABASE_NAME = "data.db";
+    final String DATABASE_NAME = "data.sqlite";
     SQLiteDatabase database;
 
     ListView lvTraiCay;
