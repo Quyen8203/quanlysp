@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
@@ -38,6 +39,7 @@ public class AddLoaiActivity extends AppCompatActivity {
         btnThem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 insert();
             }
         });
@@ -50,17 +52,32 @@ public class AddLoaiActivity extends AppCompatActivity {
         });
     }
 
+    private boolean isLoaiExists(String loai) {
+        SQLiteDatabase database = Database.initDatabase(this, DATABASE_NAME);
+        Cursor cursor = database.rawQuery("SELECT COUNT(*) FROM Loai WHERE Loai = ?", new String[]{loai});
+        cursor.moveToFirst();
+        int count = cursor.getInt(0);
+        cursor.close();
+        return count > 0;
+    }
+
+
     private void cancel() {
         Intent intent = new Intent(this, LoaiActivity.class);
         startActivity(intent);
     }
 
     private void insert() {
-
         String loai = txtLoai.getText().toString();
 
         if (loai.isEmpty()) {
             Toast.makeText(getApplicationContext(), "Vui lòng nhập tên loại sản phẩm!", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        // Kiểm tra xem loại đã tồn tại chưa
+        if (isLoaiExists(loai)) {
+            Toast.makeText(getApplicationContext(), "Loại này đã tồn tại!", Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -69,13 +86,13 @@ public class AddLoaiActivity extends AppCompatActivity {
 
         SQLiteDatabase database = Database.initDatabase(this, DATABASE_NAME);
         database.insert("Loai", null, contentValues);
-        //trở về
-
         database.close();
-        Toast.makeText(getApplicationContext(), " Tạo thành công", Toast.LENGTH_LONG).show();
+
+        Toast.makeText(getApplicationContext(), "Tạo thành công!", Toast.LENGTH_LONG).show();
         Intent intent = new Intent(this, LoaiActivity.class);
         startActivity(intent);
         finish();
+
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -92,9 +109,11 @@ public class AddLoaiActivity extends AppCompatActivity {
                         AddLoaiActivity.this,
                         AboutActivity.class);
                 startActivity(manghinhAbout);
+                break;
 
             case R.id.exit:
                 finish();
+                break;
         }
         return super.onOptionsItemSelected(item);
     }

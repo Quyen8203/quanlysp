@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">QUAN LY SAN PHAM</string>
+    <string name="app_name">PRODUCT MANAGEMENT</string>
     <string name="loginsuccess">Login Success</string>
     <string name="loginerror">Login Error! Try Again</string>
     <string name="account">Account :</string>
@@ -48,7 +48,7 @@
 
     <string name="fix">Fix Successful</string>
 
-    <string name="map_api_key"></string>
+    <string name="map_api_key">AIzaSyBWTLar6rENH_0i-qzwjWMhKLLRE-O12R8</string>
     <string name="title_activity_maps">MapsActivity</string>
 
 
