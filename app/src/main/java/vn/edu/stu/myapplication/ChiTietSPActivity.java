@@ -38,13 +38,13 @@ public class ChiTietSPActivity extends AppCompatActivity {
     }
 
     private void addControls() {
-        textviewMa = (TextView) findViewById(R.id.textviewMa);
-        textviewTen = (TextView) findViewById(R.id.textviewTen);
-        textviewMota = (TextView) findViewById(R.id.textviewMota);
-        textviewLoai = (TextView) findViewById(R.id.textviewLoai);
-        textviewGia = (TextView) findViewById(R.id.textviewGia);
+        textviewMa = findViewById(R.id.textviewMa);
+        textviewTen = findViewById(R.id.textviewTen);
+        textviewMota = findViewById(R.id.textviewMota);
+        textviewLoai = findViewById(R.id.textviewLoai);
+        textviewGia = findViewById(R.id.textviewGia);
         textviewSL = findViewById(R.id.textviewSoLuong);
-        imageviewHinh = (ImageView) findViewById(R.id.imageviewHinh);
+        imageviewHinh = findViewById(R.id.imageviewHinh);
     }
 
     private void addEvents() {

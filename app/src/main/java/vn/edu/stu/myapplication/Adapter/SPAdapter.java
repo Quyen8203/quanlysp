@@ -58,13 +58,13 @@ public class SPAdapter extends BaseAdapter {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View row = inflater.inflate(R.layout.dong_sp, null);
 
-        ImageView imgAVT = (ImageView) row.findViewById(R.id.imageviewHinh);
+        ImageView imgAVT = row.findViewById(R.id.imageviewHinh);
 
-        TextView txtTen = (TextView) row.findViewById(R.id.textviewTen);
-        TextView txtLoai = (TextView) row.findViewById(R.id.textviewLoai);
-        TextView txtSoluong = (TextView) row.findViewById(R.id.textviewSoLuong);
+        TextView txtTen = row.findViewById(R.id.textviewTen);
+        TextView txtLoai = row.findViewById(R.id.textviewLoai);
+        TextView txtSoluong = row.findViewById(R.id.textviewSoLuong);
 
-        Button btnXoa = (Button) row.findViewById(R.id.btnXoa);
+        Button btnXoa = row.findViewById(R.id.btnXoa);
 
         SP SP = list.get(position);
 

@@ -35,10 +35,10 @@ public class UpdateLoaiActivity extends AppCompatActivity {
     }
 
     private void addControls() {
-        btnThem = (Button) findViewById(R.id.btnThem);
-        btnHuy = (Button) findViewById(R.id.btnHuy);
+        btnThem = findViewById(R.id.btnThem);
+        btnHuy = findViewById(R.id.btnHuy);
 
-        txtLoai = (EditText) findViewById(R.id.txtLoai);
+        txtLoai = findViewById(R.id.txtLoai);
     }
 
     private void addEvents() {

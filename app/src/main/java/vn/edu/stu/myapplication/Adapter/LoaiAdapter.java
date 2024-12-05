@@ -56,8 +56,8 @@ public class LoaiAdapter extends BaseAdapter {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View row = inflater.inflate(R.layout.loai_sp, null);
 
-        TextView txtTenLoai = (TextView) row.findViewById(R.id.textviewTenLoai);
-        Button btnXoa = (Button) row.findViewById(R.id.btnXoaLoai);
+        TextView txtTenLoai = row.findViewById(R.id.textviewTenLoai);
+        Button btnXoa = row.findViewById(R.id.btnXoaLoai);
         Loai loai = listLoai.get(position);
         txtTenLoai.setText(loai.getLoai());
 

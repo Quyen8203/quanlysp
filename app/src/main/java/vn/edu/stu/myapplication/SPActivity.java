@@ -41,7 +41,7 @@ public class SPActivity extends AppCompatActivity {
     }
 
     private void addControls() {
-        lvTraiCay = (ListView) findViewById(R.id.lvTraiCay);
+        lvTraiCay = findViewById(R.id.lvTraiCay);
         list = new ArrayList<>();
         adapter = new SPAdapter(this, list);
         lvTraiCay.setAdapter(adapter);

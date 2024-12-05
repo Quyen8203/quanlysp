@@ -61,19 +61,19 @@ public class UpdateSPActivity extends AppCompatActivity {
     }
 
     private void addControls() {
-        btnChonHinh = (Button) findViewById(R.id.btnChonHinh);
+        btnChonHinh = findViewById(R.id.btnChonHinh);
         btnChuphinh = findViewById(R.id.btnChupHinh);
 
-        btnLuu = (Button) findViewById(R.id.btnThem);
-        btnHuy = (Button) findViewById(R.id.btnHuy);
+        btnLuu = findViewById(R.id.btnThem);
+        btnHuy = findViewById(R.id.btnHuy);
 
-        txtTen = (EditText) findViewById(R.id.txtTen);
-        txtMota = (EditText) findViewById(R.id.txtMoTa);
-        spinner = (Spinner) findViewById(R.id.spinner);
-        txtGia = (EditText) findViewById(R.id.txtGia);
+        txtTen = findViewById(R.id.txtTen);
+        txtMota = findViewById(R.id.txtMoTa);
+        spinner = findViewById(R.id.spinner);
+        txtGia = findViewById(R.id.txtGia);
         txtSL = findViewById(R.id.txtSL);
 
-        imgAVT = (ImageView) findViewById(R.id.imgAVT);
+        imgAVT = findViewById(R.id.imgAVT);
 
         loais = new ArrayList<>();
     }
@@ -112,7 +112,7 @@ public class UpdateSPActivity extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                loai = (String) getSelectItem(view);
+                loai = getSelectItem(view);
             }
 
             @Override
@@ -193,8 +193,8 @@ public class UpdateSPActivity extends AppCompatActivity {
         contentValues.put("MoTa", mota);
         contentValues.put("Anh", anh);
         contentValues.put("Loai", String.valueOf(loai));
-        contentValues.put("Gia", gia + "");
-        contentValues.put("Soluong", soluong + "");
+        contentValues.put("Gia", gia);
+        contentValues.put("Soluong", soluong);
 
         SQLiteDatabase database = Database.initDatabase(this, "data.sqlite");
         database.update("Phu", contentValues, "id = ?", new String[]{id + ""});

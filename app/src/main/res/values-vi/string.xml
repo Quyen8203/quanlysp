@@ -51,6 +51,6 @@
 
     <string name="fix">Sửa thành công</string>
 
-    <string name="map_api_key">AIzaSyBWTLar6rENH_0i-qzwjWMhKLLRE-O12R8</string>
+    <string name="map_api_key"></string>
     <string name="title_activity_maps">MapsActivity</string>
 </resources>

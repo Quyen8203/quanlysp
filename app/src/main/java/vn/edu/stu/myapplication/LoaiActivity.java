@@ -50,9 +50,9 @@ public class LoaiActivity extends AppCompatActivity {
 
     private void addControls() {
 
-        btnThemLoai = (Button) findViewById(R.id.btnThemLoai);
+        btnThemLoai = findViewById(R.id.btnThemLoai);
 
-        lvLoai = (ListView) findViewById(R.id.lvLoai);
+        lvLoai = findViewById(R.id.lvLoai);
         listLoai = new ArrayList<>();
         adapterLoai = new LoaiAdapter(this, listLoai);
         lvLoai.setAdapter(adapterLoai);
